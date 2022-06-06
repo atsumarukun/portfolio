@@ -1,3 +1,14 @@
+function changeColor() {
+    now_color = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
+    if (now_color == "#ffffff") {
+        document.documentElement.style.setProperty('--text-color', '#222222');
+        document.documentElement.style.setProperty('--bg-color', '#ffffff');
+    } else {
+        document.documentElement.style.setProperty('--text-color', '#ffffff');
+        document.documentElement.style.setProperty('--bg-color', '#222222');
+    }
+}
+
 const animation_text = "atsumarukun";
 const el_animation_text = document.getElementsByClassName("el_animation_text")[0];
 arry = animation_text.split("");

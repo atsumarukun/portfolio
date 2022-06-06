@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+:root {
+    --text-color: #ffffff;
+    --bg-color: #222222;
+}
+
 html {
     scroll-behavior: smooth;
     font-family: "游ゴシック Light", "游ゴシック", "YuGothic", sans-serif;
@@ -8,17 +13,35 @@ html {
 }
 
 body {
-    color: #ffffff;
-    background-color: #222222;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 ul {
     list-style: none;
+}
+
+.header {
+    position: fixed;
+    z-index: 998;
+}
+
+.ly_colorButton {
+    position: absolute;
+    margin: 5vh 10vw;
+}
+
+.el_colorButton {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: var(--text-color);
+    border-radius: 50%;
 }
 
 .ly_animation {
@@ -87,12 +110,22 @@ main {
 }
 
 .el_topContent_name {
-    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-stroke: 1px var(--text-color);
     color: rgba(0, 0, 0, 0); 
     font-size: 1.5rem;
 }
 
 @media screen and (min-width: 750px) {
+    .ly_colorButton {
+        position: absolute;
+        margin: 85vh 10vw;
+    }
+
+    .el_colorButton {
+        width: 45px;
+        height: 45px;
+    }
+
     .ly_topContent {
         width: 100%;
     }
