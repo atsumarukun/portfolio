@@ -25,6 +25,7 @@ ul {
     position: fixed;
     height: 100vh;
     width: 100vw;
+    z-index: 999;
 }
 
 .el_animation {
@@ -62,28 +63,48 @@ ul {
     width: 0;
 }
 
+main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 .ly_topContent {
-    max-width: 80%;
+    width: 80%;
     height: 100vh;
-    margin: 0 auto;
+    margin-left: 10%;
 }
 
 .el_topContent {
-    padding: 10% 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .el_topContent_text {
-    margin-top: 50%;
+    margin-top: 30vh;
+    font-size: 3.5rem;
 }
 
-/* @media screen and (min-width: 750px) {
-    .ly_ani > p {
-        color: #0000ff;
-    }
+.el_topContent_name {
+    -webkit-text-stroke: 1px #ffffff;
+    color: rgba(0, 0, 0, 0); 
+    font-size: 1.5rem;
 }
 
-@media screen and (min-width: 1000px) {
-    .ly_ani > p {
-        color: #ff0000;
+@media screen and (min-width: 750px) {
+    .ly_topContent {
+        width: 100%;
     }
-} */
+
+    .el_topContent_text {
+        margin-top: 15vh;
+        font-size: 15rem;
+        white-space: nowrap;
+    }
+
+    .el_topContent_name {
+        margin-left: 1.5rem;
+        font-size: 6rem;
+    }
+}
