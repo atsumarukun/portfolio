@@ -12,6 +12,10 @@ html {
     font-size: 15px;
 }
 
+* body {
+    transition: 0.75s;
+}
+
 body {
     color: var(--text-color);
     background-color: var(--bg-color);
