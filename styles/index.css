@@ -31,24 +31,6 @@ ul {
     list-style: none;
 }
 
-.header {
-    position: fixed;
-    z-index: 998;
-}
-
-.ly_colorButton {
-    position: absolute;
-    margin: 5vh 10vw;
-}
-
-.el_colorButton {
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-color: var(--text-color);
-    border-radius: 50%;
-}
-
 .ly_animation {
     position: fixed;
     height: 100vh;
@@ -109,6 +91,16 @@ main {
     height: 100%;
 }
 
+.el_topContent_colorButton {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    top: 5vh;
+}
+
 .el_topContent_text {
     margin-top: 30vh;
     font-size: 3.5rem;
@@ -121,18 +113,14 @@ main {
 }
 
 @media screen and (min-width: 750px) {
-    .ly_colorButton {
-        position: absolute;
-        margin: 85vh 10vw;
-    }
-
-    .el_colorButton {
-        width: 45px;
-        height: 45px;
-    }
-
     .ly_topContent {
         width: 100%;
+    }
+
+    .el_topContent_colorButton {
+        width: 45px;
+        height: 45px;
+        top: 85vh;
     }
 
     .el_topContent_text {
