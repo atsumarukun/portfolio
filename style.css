@@ -68,7 +68,7 @@ span {
 .el_colorButton {
     height: 7.5rem;
     width: 7.5rem;
-    font-size: 7.5rem;
+    font-size: 5rem;
     color: var(--text-color);
     background-color: var(--background-color);
 }
