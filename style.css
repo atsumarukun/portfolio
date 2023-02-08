@@ -1,13 +1,14 @@
 @charset "utf-8";
 
 :root {
-    --text-color: #000000;
+    --text-color: #222222;
+    --background-color: #efefef;
   }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
-    background-color: #efefef;
+    background-color: var(--background-color);
     margin: 0;
 }
 
@@ -20,6 +21,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    border: none;
+}
+
 span {
 	display:inline-block;
 }
@@ -27,7 +32,7 @@ span {
 .un_topAnimation {
     height: 100%;
     width: 100%;
-    background-color: #efefef;
+    background-color: var(--background-color);
     position: fixed;
     z-index: 1;
 }
@@ -58,6 +63,14 @@ span {
 .ly_body_inner {
     max-width: 90%;
     margin: 0 auto;
+}
+
+.el_colorButton {
+    height: 7.5rem;
+    width: 7.5rem;
+    font-size: 7.5rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .ttl {

@@ -1,5 +1,5 @@
 function topAnimation() {
-    const title = 'atsumarukun'
+    const title = 'atsumarukun';
     for (const i in title) {
         $('.js_topAnimation_ttl').append(`<span>${title[i]}</span>`);
     }
