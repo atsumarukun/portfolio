@@ -10,6 +10,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
+    transition: all  0.5s ease;
 }
 
 h1 {
@@ -19,6 +20,7 @@ h1 {
 a {
     color: var(--text-color);
     text-decoration: none;
+    transition: all  0.5s ease;
 }
 
 button {
@@ -71,6 +73,7 @@ span {
     font-size: 5rem;
     color: var(--text-color);
     background-color: var(--background-color);
+    transition: all  0.5s ease;
 }
 
 .ttl {
@@ -106,7 +109,7 @@ span {
     justify-content: space-between;
     padding: 0 2.5%;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid #000000;
+    border-bottom: 3px solid var(--text-color);
 }
 
 .ly_sns_wrapper {
@@ -115,6 +118,7 @@ span {
     top: 92.5%;
     left: 50%;
     transform: translateX(-50%);
+    transition: all  0.5s ease;
 }
 
 .el_sns {
