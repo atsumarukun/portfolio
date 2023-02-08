@@ -1,9 +1,23 @@
 @charset "utf-8";
 
+:root {
+    --text-color: #000000;
+  }
+
 body {
     font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
     background-color: #efefef;
     margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 span {
@@ -15,6 +29,7 @@ span {
     width: 100%;
     background-color: #efefef;
     position: fixed;
+    z-index: 1;
 }
 
 .un_topAnimation_bg {
@@ -24,12 +39,71 @@ span {
     position: fixed;
 }
 
-.el_ttl {
+.un_topAnimation_ttl {
     position: relative;
     text-align: center;
     color: #ffffff;
     font-size: 2.25rem;
+    text-transform: uppercase;
     top: 50%;
     transform: translateY(-50%);
     overflow: hidden;
+}
+
+.body_inner {
+    height: 100%;
+    width: 100%;
+}
+
+.ly_body_inner {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.ttl {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.25rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.ly_ttl {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sub_ttl {
+    text-align: center;
+    font-size: 1.75rem;
+    white-space: nowrap;
+}
+
+.ly_sub_ttl {
+    position: absolute;
+    top: 56.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bl_sns_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.5%;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #000000;
+}
+
+.ly_sns_wrapper {
+    width: 22.5%;
+    position: absolute;
+    top: 92.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.el_sns {
+    font-size: 50px;
 }
