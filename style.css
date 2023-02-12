@@ -57,16 +57,6 @@ span {
     overflow: hidden;
 }
 
-.body_inner {
-    height: 100%;
-    width: 100%;
-}
-
-.ly_body_inner {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
 .el_colorButton {
     height: 7.5rem;
     width: 7.5rem;
@@ -74,6 +64,12 @@ span {
     color: var(--text-color);
     background-color: var(--background-color);
     transition: all  0.5s ease;
+}
+
+.ly_colorButton {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .ttl {
