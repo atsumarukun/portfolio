@@ -57,21 +57,6 @@ span {
     overflow: hidden;
 }
 
-.el_colorButton {
-    height: 7.5rem;
-    width: 7.5rem;
-    font-size: 5rem;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    transition: all  0.5s ease;
-}
-
-.ly_colorButton {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .ttl {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
@@ -100,7 +85,7 @@ span {
     transform: translateX(-50%);
 }
 
-.bl_sns_wrapper {
+.bl_menue_wrapper {
     display: flex;
     justify-content: space-between;
     padding: 0 2.5%;
@@ -108,8 +93,8 @@ span {
     border-bottom: 3px solid var(--text-color);
 }
 
-.ly_sns_wrapper {
-    width: 22.5%;
+.ly_menue_wrapper {
+    width: 40%;
     position: absolute;
     top: 92.5%;
     left: 50%;
@@ -117,6 +102,9 @@ span {
     transition: all  0.5s ease;
 }
 
-.el_sns {
+.el_menue {
     font-size: 50px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: all  0.5s ease;
 }
