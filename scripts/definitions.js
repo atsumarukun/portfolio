@@ -9,19 +9,19 @@ let MOUSE_X = 0;
 let MOUSE_Y = 0;
 
 // event function
-function ResizeWindow() {
+function resizeWindow() {
     WINDOW_WIDTH = window.innerWidth;
     WINDOW_HEIGHT = window.innerHeight;
     WINDOW_HALF_WIDTH = window.innerWidth / 2;
     WINDOW_HALF_HEIGHT = window.innerHeight / 2;
 }
 
-function DocumentMouseMove(event) {
+function documentMouseMove(event) {
     MOUSE_X = event.clientX - WINDOW_HALF_WIDTH;
     MOUSE_Y = event.clientY - WINDOW_HALF_HEIGHT
 }
 
-function DocumentTouchStart( event ) {
+function documentTouchStart( event ) {
     if ( event.touches.length > 1 ) {
         event.preventDefault();
         MOUSE_X = event.touches[ 0 ].pageX - WINDOW_HALF_WIDTH;
@@ -29,7 +29,7 @@ function DocumentTouchStart( event ) {
     }
 }
 
-function DocumentTouchMove( event ) {
+function documentTouchMove( event ) {
     if ( event.touches.length == 1 ) {
         event.preventDefault();
         MOUSE_X = event.touches[ 0 ].pageX - WINDOW_HALF_WIDTH;
@@ -38,7 +38,7 @@ function DocumentTouchMove( event ) {
 }
 
 // add event
-window.addEventListener('resize', ResizeWindow);
-document.addEventListener('mousemove', DocumentMouseMove);
-document.addEventListener('touchstart', DocumentTouchStart);
-document.addEventListener('touchmove', DocumentTouchMove);
+window.addEventListener('resize', resizeWindow);
+document.addEventListener('mousemove', documentMouseMove);
+document.addEventListener('touchstart', documentTouchStart);
+document.addEventListener('touchmove', documentTouchMove);
