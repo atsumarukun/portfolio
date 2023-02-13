@@ -10,16 +10,18 @@ let windows = []
 let display_order = []
 
 function createWindow() {
+    console.log(windows.length)
     if (windows.length < 5) {
         windows.push(new Window(LASI_ID, display_order.length + 1));
-        display_order.push(LASI_ID);
-        windows[LASI_ID++].create();
+        display_order.push(LASI_ID++);
+        windows[windows.length - 1].create();
     }
 }
 
 function closeWindow() {
     const window = $(`.bl_window_${display_order[display_order.length - 1]}`);
     window.remove();
+    windows.pop();
     display_order.pop();
 }
 
