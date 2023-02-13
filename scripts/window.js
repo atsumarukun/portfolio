@@ -11,7 +11,7 @@ class Window {
                         <div class="bl_window bl_window_${this.id}">
                             <div class="bl_bar">
                                 <div class="bl_bar_inner">
-                                    <button class="el_window_button hp_red"><i class="fas fa-circle"></i></button>
+                                    <button class="el_window_button hp_red" onClick="closeWindow()"><i class="fas fa-circle"></i></button>
                                     <button class="el_window_button hp_yellow"><i class="fas fa-circle"></i></button>
                                     <button class="el_window_button hp_green"><i class="fas fa-circle"></i></button>
                                 </div>

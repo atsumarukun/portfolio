@@ -14,3 +14,8 @@ function createWindow() {
     display_order.push(LASI_ID);
     windows[LASI_ID++].create();
 }
+
+function closeWindow() {
+    const window = $(`.bl_window_${display_order[0]}`);
+    window.remove();
+}
