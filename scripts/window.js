@@ -3,7 +3,7 @@ class Window {
         this.id = id;
         this.x = 3 + this.id * 2;
         this.y = 25 + this.id * 5;
-        this.window_width = 90;
+        this.window_width = 85;
         this.window_height = 27.5;
         this.z_index = z_index;
         this.is_full_size = false;
