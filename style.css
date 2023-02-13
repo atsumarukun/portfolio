@@ -3,6 +3,8 @@
 :root {
     --text-color: #222222;
     --background-color: #efefef;
+    --window-background-color: #21212b;
+    --window-inner-background-color: #282a36;
   }
 
 body {
@@ -107,4 +109,47 @@ span {
     color: var(--text-color);
     background-color: var(--background-color);
     transition: all  0.5s ease;
+}
+
+.bl_window {
+    position: absolute;
+    border-radius: 5px;
+    background-color: var(--window-background-color);
+}
+
+.bl_bar {
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #888888;
+    display: flex;
+    align-items: center;
+}
+
+.bl_bar_inner {
+    margin-left: 15px;
+}
+
+.bl_window_inner {
+    width: 75%;
+    height: calc(100% - 50px);
+    background-color: var(--window-inner-background-color);
+    margin: 0 0 auto auto;
+}
+
+.el_window_button {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 20px;
+}
+
+.hp_red {
+    color: #ff0000;
+}
+
+.hp_yellow {
+    color: #ffff00;
+}
+
+
+.hp_green {
+    color: #00ff00;
 }
