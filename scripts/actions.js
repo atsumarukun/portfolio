@@ -20,3 +20,9 @@ function closeWindow() {
     window.remove();
     display_order.shift();
 }
+
+function changeWindowSize() {
+    const window = windows[display_order[0]];
+    window.isFullsize();
+    window.changeSize();
+}
