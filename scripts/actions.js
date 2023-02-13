@@ -10,7 +10,6 @@ let windows = []
 let display_order = []
 
 function createWindow() {
-    console.log(windows.length)
     if (windows.length < 5) {
         windows.push(new Window(LASI_ID, display_order.length + 1));
         display_order.push(LASI_ID++);
