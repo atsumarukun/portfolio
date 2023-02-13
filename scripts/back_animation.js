@@ -1,29 +1,19 @@
-var mouseX = 0,
-mouseY = 0,
-windowHalfX = window.innerWidth / 2,
-windowHalfY = window.innerHeight / 2,
-SEPARATION = 200,
-AMOUNTX = 10,
-AMOUNTY = 10,
-camera,
-scene,
-renderer;
-
-init();
-animate();
+let camera;
+let scene;
+let renderer;
 
 function init() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(
         50,
-        window.innerWidth / window.innerHeight,
+        WINDOW_WIDTH / WINDOW_HEIGHT,
         1,
         1000
     );
 
     renderer = new THREE.WebGLRenderer({alpha: true});
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
     renderer.setClearAlpha(0);
 
     const sphereGeometry = new THREE.SphereGeometry(10, 20, 20);
@@ -38,68 +28,27 @@ function init() {
 
     document.getElementsByClassName("js_animationContainer")[0].appendChild(renderer.domElement);
 
-    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-    document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
     window.addEventListener( 'resize', onWindowResize, false );
 }
 
 function onWindowResize() {
-
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
-
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = WINDOW_WIDTH / WINDOW_HEIGHT;
     camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-
-}
-
-function onDocumentMouseMove(event) {
-
-    mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowHalfY;
-
-}
-
-function onDocumentTouchStart( event ) {
-
-    if ( event.touches.length > 1 ) {
-
-        event.preventDefault();
-
-        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-    }
-}
-
-function onDocumentTouchMove( event ) {
-
-    if ( event.touches.length == 1 ) {
-
-        event.preventDefault();
-
-        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-    }
+    renderer.setSize( WINDOW_WIDTH, WINDOW_HEIGHT );
 }
 
 function animate() {
-
     requestAnimationFrame( animate );
     render();
-
 }
 
 function render() {
-
-    camera.position.x += ( mouseX - camera.position.x * 2.5 ) * .025;
-    camera.position.y += ( - mouseY - camera.position.y * 2.5 ) * .025;
+    camera.position.x += ( MOUSE_X - camera.position.x * 2.5 ) * .025;
+    camera.position.y += ( - MOUSE_Y - camera.position.y * 2.5 ) * .025;
     camera.lookAt( scene.position );
 
     renderer.render( scene, camera );
-
 }
+
+init();
+animate();
