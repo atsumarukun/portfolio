@@ -16,13 +16,13 @@ function createWindow() {
 }
 
 function closeWindow() {
-    const window = $(`.bl_window_${display_order[0]}`);
+    const window = $(`.bl_window_${display_order[display_order.length - 1]}`);
     window.remove();
-    display_order.shift();
+    display_order.pop();
 }
 
 function changeWindowSize() {
-    const window = windows[display_order[0]];
+    const window = windows[display_order[display_order.length - 1]];
     window.isFullsize();
     window.changeSize();
 }
