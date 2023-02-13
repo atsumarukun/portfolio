@@ -10,9 +10,11 @@ let windows = []
 let display_order = []
 
 function createWindow() {
-    windows.push(new Window(LASI_ID, display_order.length + 1));
-    display_order.push(LASI_ID);
-    windows[LASI_ID++].create();
+    if (windows.length < 5) {
+        windows.push(new Window(LASI_ID, display_order.length + 1));
+        display_order.push(LASI_ID);
+        windows[LASI_ID++].create();
+    }
 }
 
 function closeWindow() {
