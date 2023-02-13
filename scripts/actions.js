@@ -18,4 +18,5 @@ function createWindow() {
 function closeWindow() {
     const window = $(`.bl_window_${display_order[0]}`);
     window.remove();
+    display_order.shift();
 }
