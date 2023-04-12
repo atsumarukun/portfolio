@@ -6,11 +6,17 @@ function changeColor() {
 }
 
 let LASI_ID = 0;
-let windows = []
-let display_order = []
+let windows = [];
+let display_order = [];
+let hidden_windows = [];
 
 function createWindow() {
-    if (windows.length < 5) {
+    if (hidden_windows.length) {
+        hidden_windows.forEach((window) => {
+            window.hidden();
+        });
+        hidden_windows = [];
+    } else if (windows.length < 5) {
         windows.push(new Window(LASI_ID, display_order.length + 1));
         display_order.push(LASI_ID++);
         windows[windows.length - 1].create();
@@ -26,6 +32,11 @@ function closeWindow() {
 
 function changeWindowSize() {
     const window = windows[display_order[display_order.length - 1]];
-    window.isFullsize();
     window.changeSize();
+}
+
+function hideWindow() {
+    const window = windows[display_order[display_order.length - 1]];
+    window.hidden();
+    hidden_windows.push(window)
 }
