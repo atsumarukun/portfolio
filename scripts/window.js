@@ -15,9 +15,9 @@ class Window {
                         <div class="bl_window bl_window_${this.id}">
                             <div class="bl_windowBar">
                                 <div class="bl_windowBar_inner">
-                                    <button class="el_window_button hp_red" onClick="closeWindow()"><i class="fas fa-circle"></i></button>
-                                    <button class="el_window_button hp_yellow" onClick="hideWindow()"><i class="fas fa-circle"></i></button>
-                                    <button class="el_window_button hp_green" onClick="changeWindowSize()"><i class="fas fa-circle"></i></button>
+                                    <button class="el_window_button hp_red" onClick="closeWindow(${this.id})"><i class="fas fa-circle"></i></button>
+                                    <button class="el_window_button hp_yellow" onClick="hideWindow(${this.id})"><i class="fas fa-circle"></i></button>
+                                    <button class="el_window_button hp_green" onClick="changeWindowSize(${this.id})"><i class="fas fa-circle"></i></button>
                                 </div>
                             </div>
                             <div class="bl_window_inner"></div>
@@ -46,6 +46,10 @@ class Window {
         } else {
             window.css({'visibility': 'visible'});
         }
+    }
+
+    get Id() {
+        return this.id;
     }
 
     get zIndex() {

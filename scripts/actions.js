@@ -18,7 +18,7 @@ let hidden_windows = [];
 function createWindow() {
     if (hidden_windows.length) {
         hidden_windows.forEach((window) => {
-            window.hidden();
+            window.hidden(window.Id);
         });
         hidden_windows = [];
     } else if (windows.length < 5) {
@@ -28,20 +28,20 @@ function createWindow() {
     }
 }
 
-function closeWindow() {
-    const window = $(`.bl_window_${display_order[display_order.length - 1]}`);
+function closeWindow(id) {
+    const window = $(`.bl_window_${id}`);
     window.remove();
-    windows.pop();
-    display_order.pop();
+    windows.splice(id, 1);
+    display_order.splice(id, 1);
 }
 
-function changeWindowSize() {
-    const window = windows[display_order[display_order.length - 1]];
+function changeWindowSize(id) {
+    const window = windows[id];
     window.changeSize();
 }
 
-function hideWindow() {
-    const window = windows[display_order[display_order.length - 1]];
+function hideWindow(id) {
+    const window = windows[id];
     window.hidden();
     hidden_windows.push(window)
 }
