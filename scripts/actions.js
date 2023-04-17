@@ -41,7 +41,7 @@ function closeWindow(e, id) {
     });
 }
 
-function changeWindowSize(e, id) {
+function changeWindowSize(id) {
     const window = windows[id];
     window.changeSize();
 }
