@@ -28,20 +28,37 @@ function createWindow() {
     }
 }
 
-function closeWindow(id) {
+function closeWindow(e, id) {
+    e.stopPropagation();
     const window = $(`.bl_window_${id}`);
     window.remove();
     windows.splice(id, 1);
-    display_order.splice(id, 1);
+    display_order.splice(display_order.indexOf(id), 1);
+    display_order.forEach((v, i) => {
+        windows.forEach((window) => {
+            if (window.id == v) window.zIndex = i;
+        });
+    });
 }
 
-function changeWindowSize(id) {
+function changeWindowSize(e, id) {
     const window = windows[id];
     window.changeSize();
 }
 
-function hideWindow(id) {
+function hideWindow(e, id) {
+    e.stopPropagation();
     const window = windows[id];
     window.hidden();
     hidden_windows.push(window)
+}
+
+function ChangeWindowDisplayOrder(id) {
+    display_order = display_order.slice(0, id).concat(display_order.slice(id + 1));
+    display_order.push(id);
+    display_order.forEach((v, i) => {
+        windows.forEach((window) => {
+            if (window.id == v) window.zIndex = i;
+        });
+    });
 }

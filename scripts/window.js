@@ -12,12 +12,12 @@ class Window {
 
     create() {
         const element = `
-                        <div class="bl_window bl_window_${this.id}">
+                        <div class="bl_window bl_window_${this.id}" onClick="ChangeWindowDisplayOrder(${this.id})">
                             <div class="bl_windowBar">
                                 <div class="bl_windowBar_inner">
-                                    <button class="el_window_button hp_red" onClick="closeWindow(${this.id})"><i class="fas fa-circle"></i></button>
+                                    <button class="el_window_button hp_red" onClick="closeWindow(arguments[0], ${this.id})"><i class="fas fa-circle"></i></button>
                                     <button class="el_window_button hp_yellow" onClick="hideWindow(${this.id})"><i class="fas fa-circle"></i></button>
-                                    <button class="el_window_button hp_green" onClick="changeWindowSize(${this.id})"><i class="fas fa-circle"></i></button>
+                                    <button class="el_window_button hp_green" onClick="changeWindowSize(arguments[0], ${this.id})"><i class="fas fa-circle"></i></button>
                                 </div>
                             </div>
                             <div class="bl_window_inner"></div>
@@ -54,5 +54,11 @@ class Window {
 
     get zIndex() {
         return this.z_index;
+    }
+
+    set zIndex(z_index) {
+        this.z_index = z_index;
+        const window = $(`.bl_window_${this.id}`);
+        window.css({'z-index': this.z_index});
     }
 }
