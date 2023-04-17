@@ -1,8 +1,13 @@
 function changeColor() {
     const text_color = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
     const background_color = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+    const window_background_color = getComputedStyle(document.documentElement).getPropertyValue('--window-background-color').replace(' ', '') === '#21212b' ? '#dddddd' : '#21212b';
+    const window_inner_background_color = getComputedStyle(document.documentElement).getPropertyValue('--window-inner-background-color').replace(' ', '') === '#282a36' ? '#efefef' : '#282a36';
+
     document.documentElement.style.setProperty('--text-color', background_color);
     document.documentElement.style.setProperty('--background-color', text_color);
+    document.documentElement.style.setProperty('--window-background-color', window_background_color);
+    document.documentElement.style.setProperty('--window-inner-background-color', window_inner_background_color);
 }
 
 let LASI_ID = 0;
