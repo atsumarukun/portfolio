@@ -3,8 +3,8 @@ class Window {
     this.id = id;
     this.x = 3 + this.id * 2;
     this.y = 25 + this.id * 5;
-    this.window_width = 85;
-    this.window_height = 27.5;
+    this.window_width = 600;
+    this.window_height = 400;
     this.z_index = z_index;
     this.is_full_size = false;
     this.is_hide = false;
@@ -26,8 +26,8 @@ class Window {
     $(".bl_window_wrapper").append(element);
     const window = $(`.bl_window_${this.id}`);
     window.css({
-      width: `${this.window_width}%`,
-      height: `${this.window_height}%`,
+      width: `${this.window_width}px`,
+      height: `${this.window_height}px`,
       left: `${this.x}%`,
       top: `${this.y}%`,
     });
