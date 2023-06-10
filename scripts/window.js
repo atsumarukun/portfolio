@@ -25,6 +25,7 @@ class Window {
       height: `${this.window_height}px`,
       left: `${this.x}%`,
       top: `${this.y}%`,
+      "z-index": this.z_index,
     });
   }
 
