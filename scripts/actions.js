@@ -17,6 +17,12 @@ function changeColor() {
       .replace(" ", "") === "#282a36"
       ? "#efefef"
       : "#282a36";
+  const window_text_color =
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--window-text-color")
+      .replace(" ", "") === "#efefef"
+      ? "#222222"
+      : "#efefef";
 
   document.documentElement.style.setProperty("--text-color", background_color);
   document.documentElement.style.setProperty("--background-color", text_color);
@@ -27,6 +33,10 @@ function changeColor() {
   document.documentElement.style.setProperty(
     "--window-inner-background-color",
     window_inner_background_color
+  );
+  document.documentElement.style.setProperty(
+    "--window-text-color",
+    window_text_color
   );
 }
 
