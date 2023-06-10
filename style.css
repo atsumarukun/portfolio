@@ -145,6 +145,7 @@ span {
 .el_window_button {
   background-color: rgba(0, 0, 0, 0);
   font-size: 20px;
+  padding: 0 5px;
 }
 
 .ly_window_inner {
