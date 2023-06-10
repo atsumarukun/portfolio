@@ -33,7 +33,7 @@ function AboutWindowBodyComponent() {
                 <p class="bl_aboutWindowBodyDescriptionContentTitle">技術:</p>
                 <p>
                     Docker(実務経験有)<br />
-                    Git(GitHub)(実務経験有)
+                    Git(GitHub)(実務経験有)<br />
                     AWS(学習中/実務経験有)
                 </p>
             </div>
