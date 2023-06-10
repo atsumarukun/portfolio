@@ -67,10 +67,15 @@ function hideWindow(e, id) {
   hidden_windows.push(window);
 }
 
-function ChangeWindowDisplayOrder(id) {
+function changeWindowDisplayOrder(id) {
   const window = windows.find((window) => window.Id === id);
   windows
     .slice(windows.indexOf(window) + 1)
     .forEach((window) => (window.zIndex -= 1));
   window.zIndex = windows.length;
+}
+
+function changeWindowBody(id, status) {
+  const window = windows.find((window) => window.Id === id);
+  window.Status = status;
 }

@@ -1,4 +1,9 @@
 class Window {
+  static Status = {
+    sns: 0,
+    about: 1,
+  };
+
   constructor(id, z_index) {
     this.id = id;
     this.x = 3 + this.id * 2;
@@ -8,21 +13,11 @@ class Window {
     this.z_index = z_index;
     this.is_full_size = false;
     this.is_hide = false;
+    this.status = Window.Status.sns;
   }
 
   create() {
-    const element = `
-                        <div class="bl_window bl_window_${this.id}" onClick="ChangeWindowDisplayOrder(${this.id})">
-                            <div class="bl_windowBar">
-                                <div class="bl_windowBar_inner">
-                                    <button class="el_window_button hp_red" onClick="closeWindow(arguments[0], ${this.id})"><i class="fas fa-circle"></i></button>
-                                    <button class="el_window_button hp_yellow" onClick="hideWindow(arguments[0], ${this.id})"><i class="fas fa-circle"></i></button>
-                                    <button class="el_window_button hp_green" onClick="changeWindowSize(${this.id})"><i class="fas fa-circle"></i></button>
-                                </div>
-                            </div>
-                            <div class="bl_window_inner"></div>
-                        </div>
-                        `;
+    const element = WindowComponent(this.id, this.status);
     $(".bl_window_wrapper").append(element);
     const window = $(`.bl_window_${this.id}`);
     window.css({
@@ -40,8 +35,8 @@ class Window {
       window.css({ width: `100%`, height: `100%`, left: "0", top: "0" });
     } else {
       window.css({
-        width: `${this.window_width}%`,
-        height: `${this.window_height}%`,
+        width: `${this.window_width}px`,
+        height: `${this.window_height}px`,
         left: `${this.x}%`,
         top: `${this.y}%`,
       });
@@ -75,5 +70,16 @@ class Window {
     this.z_index = z_index;
     const window = $(`.bl_window_${this.id}`);
     window.css({ "z-index": this.z_index });
+  }
+
+  get Status() {
+    return this.status;
+  }
+
+  set Status(status) {
+    this.status = status;
+    $(`.bl_window_${this.id}`)
+      .find(".bl_windowBody")
+      .html(WindowBodyComponent(status));
   }
 }

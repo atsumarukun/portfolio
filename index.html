@@ -1,46 +1,72 @@
 <html lang="ja">
-    <head>
-        <title>ATSUMARUKUN</title>
-        <link rel="stylecheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <link rel="stylesheet" href="./style.css">
+  <head>
+    <title>ATSUMARUKUN</title>
+    <link rel="stylecheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="./style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- Roboto -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
-        <!-- Press Start 2P -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+    />
+    <!-- Press Start 2P -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    />
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    </head>
-    <body>
-        <div class="un_topAnimation js_topAnimation">
-            <div class="un_topAnimation_bg js_topAnimation_bg"></div>
-            <h1 class="un_topAnimation_ttl js_topAnimation_ttl"></h1>
-        </div>
-        <div class="js_animationContainer"></div>
-        <h1 class="ttl ly_ttl">operating system</h1>
-        <h2 class="sub_ttl ly_sub_ttl">I'm atsumarukun.</h2>
-        <div class="bl_menue_wrapper ly_menue_wrapper">
-            <button class="el_menue" onclick="createWindow()"><i class="fas fa-folder"></i></button>
-            <button class="el_menue" onclick="changeColor()"><i class="fas fa-palette"></i></button>
-            <a class="el_menue" target="_blank" href="#"><i class="fab fa-twitter"></i></a>
-            <a class="el_menue" target="_blank" href="#"><i class="fab fa-youtube"></i></a>
-            <a class="el_menue" target="_blank" href="https://github.com/atsumarukun"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="bl_window_wrapper"></div>
-        <!-- GSAP -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-        <!-- Threejs -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+  </head>
+  <body>
+    <div class="un_topAnimation js_topAnimation">
+      <div class="un_topAnimation_bg js_topAnimation_bg"></div>
+      <h1 class="un_topAnimation_ttl js_topAnimation_ttl"></h1>
+    </div>
+    <div class="js_animationContainer"></div>
+    <h1 class="ttl ly_ttl">operating system</h1>
+    <h2 class="sub_ttl ly_sub_ttl">I'm atsumarukun.</h2>
+    <div class="bl_menu ly_menu">
+      <button class="el_menuItem" onclick="createWindow()">
+        <i class="fas fa-folder"></i>
+      </button>
+      <button class="el_menuItem" onclick="changeColor()">
+        <i class="fas fa-palette"></i>
+      </button>
+      <a class="el_menuItem" target="_blank" href="#"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a class="el_menuItem" target="_blank" href="#"
+        ><i class="fab fa-youtube"></i
+      ></a>
+      <a
+        class="el_menuItem"
+        target="_blank"
+        href="https://github.com/atsumarukun"
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+    <div class="bl_window_wrapper"></div>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <!-- Threejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-        <script src="./scripts/definitions.js"></script>
-        <script src="./scripts/start_animation.js"></script>
-        <script src="./scripts/back_animation.js"></script>
-        <script src="./scripts/actions.js"></script>
-        <script src="./scripts/window.js"></script>
-    </body>
+    <script src="./scripts/definitions.js"></script>
+    <script src="./scripts/start_animation.js"></script>
+    <script src="./scripts/back_animation.js"></script>
+    <script src="./scripts/actions.js"></script>
+    <script src="./scripts/window.js"></script>
+    <script src="./scripts/components/Window.js"></script>
+    <script src="./scripts/components/WindowBody.js"></script>
+    <script src="./scripts/components/SnsWindowBody.js"></script>
+    <script src="./scripts/components/AboutWindowBody.js"></script>
+  </body>
 </html>
