@@ -111,6 +111,10 @@ span {
   border-bottom: 3px solid var(--text-color);
 }
 
+.ly_menuItem {
+  width: fit-content;
+}
+
 .el_menuItem {
   font-size: 50px;
   color: var(--text-color);
