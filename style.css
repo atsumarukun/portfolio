@@ -124,6 +124,7 @@ span {
 
 .bl_window {
   border-radius: 5px;
+  color: var(--window-text-color);
   background-color: var(--window-background-color);
 }
 
@@ -204,6 +205,47 @@ span {
 
 .bl_snsWindowBodyItem > i {
   font-size: 50px;
+}
+
+.bl_aboutWindowBody {
+  display: flex;
+  height: 100%;
+}
+
+.ly_aboutWindowBodyProfile {
+  width: 25%;
+}
+
+.bl_aboutWindowBodyProfile {
+  text-align: center;
+}
+
+.ly_aboutWindowBodyProfileIcon {
+  width: 100%;
+}
+
+.bl_aboutWindowBodyProfileIcon {
+  border-radius: 50%;
+  border: solid 1px var(--window-text-color);
+}
+
+.ly_aboutWindowBodyDescription {
+  width: 80%;
+}
+
+.bl_aboutWindowBodyDescription {
+  overflow-y: auto;
+  padding: 15px 30px;
+}
+
+.bl_aboutWindowBodyDescriptionContent {
+  display: flex;
+  column-gap: 5px;
+  margin-bottom: 10px;
+}
+
+.bl_aboutWindowBodyDescriptionContentTitle {
+  min-width: 12.5%;
 }
 
 .hp_red {

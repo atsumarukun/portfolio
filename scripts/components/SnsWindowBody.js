@@ -1,6 +1,5 @@
 function SnsWindowBodyComponent() {
-  {
-    return `
+  return `
         <div class="bl_snsWindowBody">
             <a class="bl_snsWindowBodyItem" target="_blank" href="#">
                 <i class="fab fa-twitter"></i>
@@ -16,5 +15,4 @@ function SnsWindowBodyComponent() {
             </a>
         </div>
     `;
-  }
 }
