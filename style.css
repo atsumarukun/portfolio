@@ -230,7 +230,7 @@ span {
 
 .bl_aboutWindowBodyProfileIcon {
   border-radius: 50%;
-  border: solid 1px var(--window-text-color);
+  border: solid 1px #888888;
 }
 
 .ly_aboutWindowBodyDescription {
