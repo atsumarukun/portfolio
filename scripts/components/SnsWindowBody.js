@@ -1,7 +1,7 @@
 function SnsWindowBodyComponent() {
   return `
         <div class="bl_snsWindowBody">
-            <a class="bl_snsWindowBodyItem" target="_blank" href="#">
+            <a class="bl_snsWindowBodyItem" target="_blank" href="https://twitter.com/atsumarukun_pc">
                 <i class="fab fa-twitter"></i>
                 <p>Twitter</p>
             </a>
