@@ -13,6 +13,10 @@ function SnsWindowBodyComponent() {
                 <i class="fab fa-github"></i>
                 <p>GitHub</p>
             </a>
+            <a class="bl_snsWindowBodyItem" target="_blank" href="https://qiita.com/atsumarukun">
+                <i class="fa fa-globe"></i>
+                <p>Qiita</p>
+            </a>
         </div>
     `;
 }
