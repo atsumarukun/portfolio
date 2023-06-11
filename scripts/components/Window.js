@@ -8,18 +8,18 @@ function WindowComponent(id, status) {
       </div>
       <div class="ly_window_inner bl_window_inner">
         <div class="ly_windowMenu bl_windowMenu">
-        <button class="ly_windowMenuItem el_windowMenuItem" onClick="changeWindowBody(${id}, ${
+          <button class="ly_windowMenuItem el_windowMenuItem" onClick="changeWindowBody(${id}, ${
     Window.Status.sns
   })">
-          <i class="fa fa-globe"></i>
-          <p>SNS</p>
-        </button>
-        <button class="ly_windowMenuItem el_windowMenuItem" onClick="changeWindowBody(${id}, ${
+            <i class="fa fa-globe"></i>
+            <p>SNS</p>
+          </button>
+          <button class="ly_windowMenuItem el_windowMenuItem" onClick="changeWindowBody(${id}, ${
     Window.Status.about
   })">
-          <i class="fas fa-user"></i>
-          <p>About</p>
-        </button>
+            <i class="fas fa-user"></i>
+            <p>About</p>
+          </button>
         </div>
         <div class="ly_windowBody bl_windowBody">
           ${WindowBodyComponent(status)}

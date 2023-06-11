@@ -43,6 +43,7 @@ function changeColor() {
 let LASI_ID = 0;
 let windows = [];
 let hidden_windows = [];
+let error_window = undefined;
 
 function createWindow() {
   if (hidden_windows.length) {
@@ -54,38 +55,53 @@ function createWindow() {
     const window = new Window(LASI_ID++, windows.length + 1);
     windows.push(window);
     window.create();
+  } else if (!error_window) {
+    error_window = new ErrorWindow(LASI_ID++, windows.length + 1);
+    error_window.create();
   }
 }
 
 function closeWindow(e, id) {
   e.stopPropagation();
-  const window = windows.find((window) => window.Id === id);
-  window.remove();
-  windows.splice(windows.indexOf(window), 1);
-  delete window;
+  if (error_window && error_window.Id === id) {
+    error_window.remove();
+    error_window = undefined;
+  } else if (!error_window) {
+    const window = windows.find((window) => window.Id === id);
+    window.remove();
+    windows.splice(windows.indexOf(window), 1);
+  }
 }
 
 function changeWindowSize(id) {
-  const window = windows.find((window) => window.Id === id);
-  window.changeSize();
+  if (!error_window) {
+    const window = windows.find((window) => window.Id === id);
+    window.changeSize();
+  }
 }
 
 function hideWindow(e, id) {
-  e.stopPropagation();
-  const window = windows.find((window) => window.Id === id);
-  window.hidden();
-  hidden_windows.push(window);
+  if (!error_window) {
+    e.stopPropagation();
+    const window = windows.find((window) => window.Id === id);
+    window.hidden();
+    hidden_windows.push(window);
+  }
 }
 
 function changeWindowDisplayOrder(id) {
-  const window = windows.find((window) => window.Id === id);
-  windows
-    .slice(windows.indexOf(window) + 1)
-    .forEach((window) => (window.zIndex -= 1));
-  window.zIndex = windows.length;
+  if (!error_window) {
+    const window = windows.find((window) => window.Id === id);
+    windows
+      .slice(windows.indexOf(window) + 1)
+      .forEach((window) => (window.zIndex -= 1));
+    window.zIndex = windows.length;
+  }
 }
 
 function changeWindowBody(id, status) {
-  const window = windows.find((window) => window.Id === id);
-  window.Status = status;
+  if (!error_window) {
+    const window = windows.find((window) => window.Id === id);
+    window.Status = status;
+  }
 }

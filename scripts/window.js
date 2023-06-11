@@ -84,3 +84,27 @@ class Window {
       .html(WindowBodyComponent(status));
   }
 }
+
+class ErrorWindow extends Window {
+  constructor(id, z_index) {
+    super(id, z_index);
+    this.window_width = 300;
+    this.window_height = 100;
+  }
+
+  create() {
+    const element = ErrorWindowComponent(
+      this.id,
+      "これ以上windowを表示できません。"
+    );
+    $(".bl_window_wrapper").append(element);
+    const window = $(`.bl_window_${this.id}`);
+    window.css({
+      width: `${this.window_width}px`,
+      height: `${this.window_height}px`,
+      left: `${this.x}%`,
+      top: `${this.y}%`,
+      "z-index": this.z_index,
+    });
+  }
+}
